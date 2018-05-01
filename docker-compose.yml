@@ -1,0 +1,40 @@
+version: '3.3'
+services:
+  host1:
+    image: "hello:3"
+    volumes:
+      - /Users/zhangquanzhi/docker_vol:/config
+    networks:
+      net_on_mac:
+        aliases:
+            - "host1.com"
+    ports:
+      - "8001:8001"
+    command: "--port=8001"
+
+  host2:
+    image: "hello:3"
+    volumes:
+      - /Users/zhangquanzhi/docker_vol:/config
+    networks:
+      net_on_mac:
+        aliases:
+            - "host2.com"
+    ports:
+      - "8002:8002"
+    command: "--port=8002"
+
+  host3:
+    image: "hello:3"
+    volumes:
+      - /Users/zhangquanzhi/docker_vol:/config
+    networks:
+      net_on_mac:
+        aliases:
+            - "host3.com"
+    ports:
+      - "8003:8003"
+    command: "--port=8003"
+
+networks:
+  net_on_mac:
